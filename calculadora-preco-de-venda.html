@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de preço de venda grátis (com taxa da Shopee, Mercado Livre e iFood) | Norte Lab</title>
+<meta name="description" content="Calculadora de preço de venda gratuita para quem vende produto feito à mão ou comida: custo, sua hora, comissão do canal e margem de lucro. Veja o preço mínimo e o preço sugerido em 1 minuto.">
+<link rel="canonical" href="https://nortelabco-code.github.io/norte-planilhas/calculadora-preco-de-venda.html">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BYEGJBP5TS"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-BYEGJBP5TS');</script>
+<style>
+:root{--papel:#f7f4ee;--marinho:#1d2b45;--verde:#1f7a74;--cinza:#5b6472;--linha:#ddd6c8;--amarelo:#fff6cc}
+*{box-sizing:border-box}body{margin:0;background:var(--papel);color:var(--marinho);font:16px/1.55 Arial,Helvetica,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.marca{letter-spacing:.35em;font-size:13px;color:var(--verde);font-weight:bold}
+h1{font-size:28px;line-height:1.2;margin:8px 0 8px}h2{font-size:21px;margin:32px 0 8px}
+p.sub{color:var(--cinza);margin:0 0 20px}
+.card{background:#fff;border:1px solid var(--linha);border-radius:10px;padding:20px;margin:16px 0}
+.f{display:grid;grid-template-columns:1fr 1fr;gap:4px 14px}
+label{display:block;font-weight:bold;margin:10px 0 4px;font-size:15px}
+input,select{width:100%;padding:11px;font-size:17px;border:1px solid var(--linha);border-radius:8px;background:var(--amarelo);font-family:inherit;color:inherit}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.box{border-radius:8px;padding:14px;color:#fff}.box b{display:block;font-size:22px}
+.n{background:var(--marinho)}.d{background:var(--verde)}.p{background:#b5852a}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:15px}td{padding:7px 4px;border-bottom:1px solid var(--linha)}td:last-child{text-align:right;font-weight:bold}
+.alerta{color:#b03a2e;font-weight:bold}
+.cta{background:var(--marinho);color:#fff;border-radius:10px;padding:20px;margin:28px 0}
+.cta a{display:inline-block;margin-top:10px;background:#fff;color:var(--marinho);padding:12px 18px;border-radius:8px;font-weight:bold;text-decoration:none}
+small,.nota{color:var(--cinza);font-size:13px}
+@media(max-width:560px){.grid,.f{grid-template-columns:1fr}h1{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="marca">NORTE LAB</div>
+<h1>Calculadora de preço de venda: quanto cobrar sem a taxa comer o seu lucro</h1>
+<p class="sub">Para quem vende doce, vela, crochê, artesanato ou qualquer produto feito por você. Coloque o custo, o seu tempo e o canal de venda e veja o preço mínimo e o preço sugerido. Grátis, sem cadastro, nada é enviado: o cálculo acontece no seu navegador.</p>
+
+<div class="card">
+<div class="f">
+<div><label for="mat">Materiais por unidade (R$)</label><input id="mat" type="text" inputmode="decimal" placeholder="Ex.: 12,50"></div>
+<div><label for="emb">Embalagem e frete por unidade (R$)</label><input id="emb" type="text" inputmode="decimal" placeholder="Ex.: 1,50"></div>
+<div><label for="min">Seu tempo por unidade (minutos)</label><input id="min" type="text" inputmode="decimal" placeholder="Ex.: 15"></div>
+<div><label for="hora">Valor da sua hora (R$)</label><input id="hora" type="text" inputmode="decimal" placeholder="Ex.: 20"></div>
+<div><label for="fixo">Custo fixo por unidade (R$)</label><input id="fixo" type="text" inputmode="decimal" placeholder="Ex.: 1,40"><small>Luz, gás, internet, MEI… divididos pelas unidades do mês</small></div>
+<div><label for="marg">Margem de lucro desejada (%)</label><input id="marg" type="text" inputmode="decimal" placeholder="Ex.: 30"></div>
+<div><label for="canal">Canal de venda</label>
+<select id="canal">
+<option value="0|0">Venda direta (Pix/dinheiro)</option>
+<option value="20|4">Shopee CNPJ, item até R$ 79,99 (20% + R$ 4)</option>
+<option value="14|7">Shopee CPF (14% + R$ 7)</option>
+<option value="14|6.5">Mercado Livre Clássico, abaixo de R$ 79 (14% + R$ 6,50)</option>
+<option value="19|6.5">Mercado Livre Premium, abaixo de R$ 79 (19% + R$ 6,50)</option>
+<option value="15.5|0">iFood Básico, entrega própria (15,5%)</option>
+<option value="27|0">iFood Entrega (27%)</option>
+<option value="4|0">Cartão na maquininha, crédito (4%)</option>
+<option value="x">Outro: digitar a taxa</option>
+</select></div>
+<div id="outro" hidden><label for="com">Comissão (%) e tarifa fixa (R$)</label><div class="f" style="grid-template-columns:1fr 1fr"><input id="com" type="text" inputmode="decimal" placeholder="%"><input id="tar" type="text" inputmode="decimal" placeholder="R$"></div></div>
+</div>
+<div class="grid">
+<div class="box n">Custo por unidade<b id="vc">R$ 0,00</b><small style="color:#dfe5ef">materiais + tempo + embalagem + fixo</small></div>
+<div class="box p">Preço mínimo<b id="vm">R$ 0,00</b><small style="color:#fbf0d9">abaixo disso você perde dinheiro</small></div>
+<div class="box d">Preço sugerido<b id="vs">R$ 0,00</b><small style="color:#dff2ef">já com a taxa do canal e a sua margem</small></div>
+</div>
+<table>
+<tr><td>Taxa do canal nesse preço</td><td id="tx">—</td></tr>
+<tr><td>Você recebe depois da taxa</td><td id="rc">—</td></tr>
+<tr><td>Lucro por unidade</td><td id="lu">—</td></tr>
+</table>
+<p id="aviso" class="alerta" hidden></p>
+</div>
+
+<div class="cta">
+<b style="font-size:19px">Vende mais de um produto ou em mais de um canal?</b>
+<p style="margin:6px 0 0">A Planilha de Precificação da Norte Lab faz essa conta para até 50 produtos de uma vez: soma os materiais do lote, transforma o seu tempo em custo, rateia os custos fixos, aplica a taxa de cada canal e mostra preço mínimo, preço sugerido, atacado e quantas unidades você precisa vender no mês. Excel e Google Sheets, pagamento único de R$ 27.</p>
+<a id="cta" href="https://pay.kiwify.com.br/0E6X8FB?utm_source=calculadora&amp;utm_medium=organico&amp;utm_campaign=preco">Ver a Planilha de Precificação</a>
+</div>
+
+<h2>Como a conta é feita</h2>
+<p>Primeiro somamos o custo de uma unidade: materiais, embalagem, o seu tempo (minutos × valor da hora) e uma parte dos custos fixos do mês. Depois incluímos a taxa do canal: <b>preço = (custo + tarifa fixa) ÷ (1 − comissão − margem)</b>. Assim a comissão é calculada sobre o preço final, e a margem que você escolheu sobra de verdade no bolso. O preço mínimo usa a mesma conta com margem zero.</p>
+<h2>Por que não basta somar uma porcentagem ao custo</h2>
+<p>Se o produto custa R$ 20 e você coloca 30% em cima (R$ 26), a Shopee fica com 20% + R$ 4 desses R$ 26 e você recebe R$ 16,80: menos do que gastou. A taxa do canal precisa entrar dentro do preço, e não depois.</p>
+<h2>Perguntas frequentes</h2>
+<p><b>Quanto vale a minha hora?</b> Divida quanto quer tirar por mês pelas horas que trabalha. Quem quer R$ 2.500 trabalhando 120 h por mês tem uma hora de cerca de R$ 20,83.<br>
+<b>As taxas estão certas?</b> São valores de referência de outubro de 2026. Elas mudam por categoria, faixa de preço, tipo de conta e plano: confira na sua conta e use a opção "Outro" para digitar a sua taxa.<br>
+<b>E o imposto?</b> Esta calculadora não calcula imposto. Você pode somar a alíquota que paga à comissão (opção "Outro").</p>
+<p class="nota">Ferramenta educativa e gratuita da Norte Lab. Não é recomendação financeira, contábil ou fiscal. Nenhum dado digitado sai do seu navegador. Taxas de referência (out/2026): Shopee e Mercado Livre por guias públicos de 2026; iFood por guia público de planos; o Elo7 encerrou as vendas em maio de 2026.<br><a href="./">Planilha de gastos mensais 2027</a> · <a href="calculadora-50-30-20.html">Calculadora 50/30/20</a> · <a href="planilha-gastos-natal.html">Calculadora de gastos de Natal</a></p>
+</div>
+<script>
+function num(v){v=(v||'').toString().replace(/[^\d,.-]/g,'');if(v.indexOf(',')>-1){v=v.replace(/\./g,'').replace(',','.')}var n=parseFloat(v);return isNaN(n)?0:n}
+function brl(n){return n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}
+function $(id){return document.getElementById(id)}
+function calc(){
+ var sel=$('canal').value,com,tar;
+ $('outro').hidden=sel!=='x';
+ if(sel==='x'){com=num($('com').value)/100;tar=num($('tar').value)}else{var p=sel.split('|');com=parseFloat(p[0])/100;tar=parseFloat(p[1])}
+ var custo=num($('mat').value)+num($('emb').value)+num($('min').value)/60*num($('hora').value)+num($('fixo').value);
+ var marg=num($('marg').value)/100;
+ $('vc').textContent=brl(custo);
+ var av=$('aviso');av.hidden=true;
+ if(custo<=0){['vm','vs'].forEach(function(i){$(i).textContent=brl(0)});['tx','rc','lu'].forEach(function(i){$(i).textContent='—'});return}
+ var mn=1-com>0?(custo+tar)/(1-com):NaN, sg=1-com-marg>0?(custo+tar)/(1-com-marg):NaN;
+ $('vm').textContent=isNaN(mn)?'—':brl(mn);
+ if(isNaN(sg)){$('vs').textContent='—';['tx','rc','lu'].forEach(function(i){$(i).textContent='—'});av.textContent='Comissão + margem chegam a 100% ou mais: reduza a margem ou confira a taxa.';av.hidden=false;return}
+ var taxa=sg*com+tar;
+ $('vs').textContent=brl(sg);$('tx').textContent=brl(taxa);$('rc').textContent=brl(sg-taxa);$('lu').textContent=brl(sg-taxa-custo);
+ if(sel!=='x'&&tar>0&&sg>=79.99){av.textContent='Atenção: acima de ~R$ 80 a Shopee e o Mercado Livre usam outra faixa de taxa. Confira a taxa dessa faixa e use a opção "Outro".';av.hidden=false}
+}
+['mat','emb','min','hora','fixo','marg','com','tar'].forEach(function(id){$(id).addEventListener('input',calc)});$('canal').addEventListener('change',calc);
+$('cta').addEventListener('click',function(){if(window.gtag)gtag('event','clique_comprar',{posicao:'calculadora_preco'})});
+calc();
+</script>
+</body>
+</html>

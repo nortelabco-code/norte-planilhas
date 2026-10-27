@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Planilha de gastos de Natal 2026 + calculadora grátis do orçamento de fim de ano | Norte Lab</title>
+<meta name="description" content="Calculadora grátis de gastos de Natal e fim de ano: presentes, ceia, viagem, decoração e as contas de janeiro (IPVA, IPTU, material escolar). Veja se cabe no seu teto e quanto guardar por semana.">
+<link rel="canonical" href="https://nortelabco-code.github.io/norte-planilhas/planilha-gastos-natal.html">
+<meta property="og:title" content="Calculadora grátis de gastos de Natal e fim de ano">
+<meta property="og:description" content="Presentes, ceia, viagem e contas de janeiro numa conta só. Grátis, sem cadastro.">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BYEGJBP5TS"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-BYEGJBP5TS');</script>
+<style>
+:root{--papel:#f7f4ee;--marinho:#1d2b45;--verde:#1f7a74;--cinza:#5b6472;--linha:#ddd6c8;--amarelo:#fff6cc}
+*{box-sizing:border-box}body{margin:0;background:var(--papel);color:var(--marinho);font:16px/1.55 Arial,Helvetica,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.marca{letter-spacing:.35em;font-size:13px;color:var(--verde);font-weight:bold}
+h1{font-size:28px;line-height:1.2;margin:8px 0 8px}h2{font-size:21px;margin:32px 0 8px}
+p.sub{color:var(--cinza);margin:0 0 20px}
+.card{background:#fff;border:1px solid var(--linha);border-radius:10px;padding:20px;margin:16px 0}
+.f{display:grid;grid-template-columns:1fr 1fr;gap:4px 14px}
+label{display:block;font-weight:bold;margin:10px 0 4px;font-size:15px}
+input{width:100%;padding:11px;font-size:17px;border:1px solid var(--linha);border-radius:8px;background:var(--amarelo);font-family:inherit;color:inherit}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.box{border-radius:8px;padding:14px;color:#fff}.box b{display:block;font-size:22px}
+.n{background:var(--marinho)}.d{background:var(--verde)}.p{background:#b5852a}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:15px}td{padding:7px 4px;border-bottom:1px solid var(--linha)}td:last-child{text-align:right;font-weight:bold}
+.alerta{color:#b03a2e;font-weight:bold}.ok{color:var(--verde);font-weight:bold}
+.cta{background:var(--marinho);color:#fff;border-radius:10px;padding:20px;margin:28px 0}
+.cta a{display:inline-block;margin-top:10px;background:#fff;color:var(--marinho);padding:12px 18px;border-radius:8px;font-weight:bold;text-decoration:none}
+ul{padding-left:20px}small,.nota{color:var(--cinza);font-size:13px}
+@media(max-width:560px){.grid,.f{grid-template-columns:1fr}h1{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="marca">NORTE LAB</div>
+<h1>Planilha de gastos de Natal: calcule o seu fim de ano antes de gastar</h1>
+<p class="sub">Presentes, ceia, Réveillon, viagem e as contas que chegam em janeiro, numa conta só. Coloque os valores aproximados e veja se tudo cabe no quanto você pode gastar e quanto separar por semana. Grátis, sem cadastro: o cálculo acontece no seu navegador e nada é enviado.</p>
+
+<div class="card">
+<div class="f">
+<div><label for="teto">Quanto posso gastar no total (R$)</label><input id="teto" type="text" inputmode="decimal" placeholder="Ex.: 2.000"><small>O seu teto para dezembro, sem contar as contas de janeiro</small></div>
+<div><label for="np">Presentes: quantas pessoas</label><input id="np" type="text" inputmode="decimal" placeholder="Ex.: 8"></div>
+<div><label for="vp">Valor médio por presente (R$)</label><input id="vp" type="text" inputmode="decimal" placeholder="Ex.: 80"></div>
+<div><label for="ceia">Ceia, Réveillon e festas (R$)</label><input id="ceia" type="text" inputmode="decimal" placeholder="Ex.: 600"></div>
+<div><label for="via">Viagem de fim de ano (R$)</label><input id="via" type="text" inputmode="decimal" placeholder="Ex.: 0"></div>
+<div><label for="out">Decoração, amigo secreto e roupas (R$)</label><input id="out" type="text" inputmode="decimal" placeholder="Ex.: 250"></div>
+<div><label for="jan">Contas de janeiro (R$)</label><input id="jan" type="text" inputmode="decimal" placeholder="Ex.: 1.800"><small>IPVA, IPTU, material escolar, matrícula, fatura de dezembro… some os valores que você já sabe</small></div>
+<div><label for="lim">Preciso ter o dinheiro de janeiro até</label><input id="lim" type="date" value="2027-01-10"></div>
+</div>
+<div class="grid">
+<div class="box n">Natal e fim de ano<b id="vt">R$ 0,00</b><small style="color:#dfe5ef">presentes + festas + viagem + outros</small></div>
+<div class="box p">Sobra ou falta no teto<b id="vs">—</b><small style="color:#fbf0d9" id="vsx">preencha o teto</small></div>
+<div class="box d">Guardar por semana para janeiro<b id="vj">R$ 0,00</b><small style="color:#dff2ef" id="vjx">a partir de hoje</small></div>
+</div>
+<table>
+<tr><td>Presentes (pessoas × valor médio)</td><td id="tp">—</td></tr>
+<tr><td>Parte do teto já comprometida</td><td id="pc">—</td></tr>
+<tr><td>Semanas até a data de janeiro</td><td id="sem">—</td></tr>
+<tr><td>Fim de ano + janeiro, tudo junto</td><td id="tt">—</td></tr>
+</table>
+<p id="aviso" hidden></p>
+</div>
+
+<div class="cta">
+<b style="font-size:19px">Quer acompanhar presente a presente e o que já foi pago?</b>
+<p style="margin:6px 0 0">A Planilha de Orçamento de Natal e Fim de Ano 2026 da Norte Lab tem abas de Presentes (para quem, ideia, orçado, gasto, comprado ou não), Ceia e festas (item, quantidade e preço), Viagem, Decoração e amigo secreto, Contas de janeiro com quanto guardar por semana e um Resumo com orçado x gasto, alerta de teto e gráfico. Excel e Google Sheets, vem com dados de exemplo, pagamento único de R$ 14,90.</p>
+<a id="cta" href="https://pay.kiwify.com.br/In2bssz?utm_source=calculadora&amp;utm_medium=organico&amp;utm_campaign=natal">Ver a planilha de Natal</a>
+</div>
+
+<h2>Como montar o orçamento de Natal em 4 passos</h2>
+<ul>
+<li><b>Escolha um teto antes de comprar.</b> Um número só para o fim de ano inteiro, contando com o 13º salário se ele for a fonte. Tudo o mais é dividido dentro dele.</li>
+<li><b>Faça a lista de presentes com valor ao lado de cada nome.</b> É o item que mais foge do controle quando é decidido na loja.</li>
+<li><b>Separe as festas por evento.</b> Ceia de Natal, Réveillon e confraternização têm itens diferentes; anotar quantidade e preço estimado mostra onde dá para ajustar.</li>
+<li><b>Reserve janeiro antes de dezembro acabar.</b> IPVA, IPTU, material escolar e a fatura do cartão de dezembro chegam juntos. Dividir esse total pelas semanas que faltam mostra quanto separar desde já.</li>
+</ul>
+<h2>Exemplo (dados de exemplo)</h2>
+<p>Teto de R$ 5.000; presentes, ceia, viagem e decoração orçados em R$ 4.514,70, sobrando R$ 485,30 no teto. Contas de janeiro de R$ 3.790,00 até 10/01/2027, começando a guardar em 02/11: 10 semanas, ou R$ 379,00 por semana. Números ilustrativos da planilha de exemplo, não uma recomendação de quanto gastar.</p>
+<h2>Perguntas frequentes</h2>
+<p><b>Preciso de planilha se já usei a calculadora?</b> A calculadora dá o total de uma vez. A planilha serve para acompanhar ao longo de dezembro: o que já foi comprado, quanto foi gasto de fato em cada item e o que ainda falta.<br>
+<b>Funciona no celular?</b> A calculadora sim, no navegador. A planilha abre no app do Google Sheets; para preencher, o computador é mais confortável.<br>
+<b>Vocês calculam o IPVA ou o IPTU?</b> Não. Os valores das contas de janeiro são os que você informa, conforme o carnê ou o aviso de cobrança.</p>
+<p class="nota">Ferramenta educativa e gratuita da Norte Lab. Não é recomendação financeira. Nenhum dado digitado sai do seu navegador. <a href="./">Planilha de gastos mensais 2027</a> · <a href="calculadora-50-30-20.html">Calculadora 50/30/20</a> · <a href="calculadora-preco-de-venda.html">Calculadora de preço de venda</a></p>
+</div>
+<script>
+function num(v){v=(v||'').toString().replace(/[^\d,.-]/g,'');if(v.indexOf(',')>-1){v=v.replace(/\./g,'').replace(',','.')}else if(/^\d{1,3}(\.\d{3})+$/.test(v)){v=v.replace(/\./g,'')}var n=parseFloat(v);return isNaN(n)?0:n}
+function brl(n){return n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}
+function $(id){return document.getElementById(id)}
+function calc(){
+ var pres=num($('np').value)*num($('vp').value);
+ var tot=pres+num($('ceia').value)+num($('via').value)+num($('out').value);
+ var teto=num($('teto').value), jan=num($('jan').value);
+ $('vt').textContent=brl(tot);$('tp').textContent=brl(pres);$('tt').textContent=brl(tot+jan);
+ var av=$('aviso');av.hidden=true;
+ if(teto>0){var s=teto-tot;$('vs').textContent=brl(Math.abs(s));$('vsx').textContent=s>=0?'sobra no teto':'passa do teto';$('pc').textContent=(tot/teto*100).toLocaleString('pt-BR',{maximumFractionDigits:0})+'%';
+  if(s<0){av.className='alerta';av.textContent='O planejado passa do teto em '+brl(-s)+'. Ajuste o valor médio dos presentes ou os itens das festas antes de comprar.';av.hidden=false}
+  else if(tot>0){av.className='ok';av.textContent='Dentro do teto.';av.hidden=false}}
+ else{$('vs').textContent='—';$('vsx').textContent='preencha o teto';$('pc').textContent='—'}
+ var d=$('lim').value?new Date($('lim').value+'T12:00:00'):null,h=new Date();h.setHours(12,0,0,0);
+ if(d&&jan>0){var w=Math.max(1,Math.ceil((d-h)/864e5/7));$('sem').textContent=w;$('vj').textContent=brl(jan/w);$('vjx').textContent='por '+w+' semana'+(w>1?'s':'')}
+ else{$('sem').textContent='—';$('vj').textContent=brl(0);$('vjx').textContent='a partir de hoje'}
+}
+['teto','np','vp','ceia','via','out','jan','lim'].forEach(function(id){$(id).addEventListener('input',calc)});
+$('cta').addEventListener('click',function(){if(window.gtag)gtag('event','clique_comprar',{posicao:'pagina_natal'})});
+calc();
+</script>
+</body>
+</html>
