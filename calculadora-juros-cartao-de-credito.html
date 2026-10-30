@@ -72,7 +72,7 @@ small,.nota{color:var(--cinza);font-size:13px}
 </div>
 
 <div class="cta">
-<b style="font-size:19px">Tem mais de uma dívida e não sabe qual pagar primeiro?</b>
+<b style="font-size:19px" id="ctah">Tem mais de uma dívida e não sabe qual pagar primeiro?</b>
 <p style="margin:6px 0 0">A Planilha de Quitação de Dívidas 2027 da Norte Lab junta cartão, empréstimo e cheque especial num lugar só, compara a ordem pelo menor saldo e pelos maiores juros e mostra o mês previsto em que cada dívida acaba, a partir do valor que você consegue pagar. Excel e Google Sheets, pagamento único de R$ 27, garantia de 7 dias.</p>
 <a id="cta" href="https://pay.kiwify.com.br/XsrJCgf?utm_source=calculadora&amp;utm_medium=organico&amp;utm_campaign=juros_cartao">Ver a planilha de quitação</a>
 </div>
@@ -105,6 +105,7 @@ function calc(){
  var rows='',teto=s*2;
  for(var k=1;k<=m;k++){var v=s*Math.pow(1+ir,k),cap=v>teto;rows+='<tr><td>'+k+'</td><td>'+brl(cap?teto:v)+(cap?' <small>(teto legal)</small>':'')+'</td></tr>';if(cap)break}
  $('tab').innerHTML=rows||'<tr><td colspan="2">—</td></tr>';
+ $('ctah').textContent=s>0?'São '+brl(s*ir)+' de juros só no 1º mês. Monte o plano para sair do rotativo:':'Tem mais de uma dívida e não sabe qual pagar primeiro?';
 }
 ['fat','pag','tr','tp','np','mm'].forEach(function(id){$(id).addEventListener('input',calc)});
 $('cta').addEventListener('click',function(){if(window.gtag)gtag('event','clique_comprar',{posicao:'calculadora_juros_cartao'})});

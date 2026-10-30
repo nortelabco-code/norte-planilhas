@@ -65,7 +65,7 @@ small,.nota{color:var(--cinza);font-size:13px}
 </div>
 
 <div class="cta">
-<b style="font-size:19px">Quer acompanhar isso todo mês sem fazer conta?</b>
+<b style="font-size:19px" id="ctah">Quer acompanhar isso todo mês sem fazer conta?</b>
 <p style="margin:6px 0 0">A Planilha de Gastos Mensais 2027 da Norte Lab soma seus lançamentos por categoria, mostra orçado x realizado, o que estourou no mês, resumo do ano, metas e dívidas. Excel e Google Sheets, pagamento único de R$ 27, garantia de 7 dias.</p>
 <a id="cta" href="https://pay.kiwify.com.br/ZpsuiQa?utm_source=calculadora&amp;utm_medium=organico&amp;utm_campaign=503020">Ver a planilha</a>
 <a href="https://nortelabco-code.github.io/norte-planilhas/?utm_source=calculadora&amp;utm_medium=organico&amp;utm_campaign=503020" style="background:transparent;color:#fff;border:1px solid #fff;margin-left:6px">O que vem nela</a>
@@ -92,7 +92,8 @@ function brl(n){return n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'
 function sit(gasto,limite,poup){if(!gasto)return'—';var d=gasto-limite;if(poup){return d>=0?'<span class="ok">meta atingida</span>':'<span class="alerta">faltam '+brl(-d)+'</span>'}return d<=0?'<span class="ok">dentro ('+brl(-d)+' de folga)</span>':'<span class="alerta">'+brl(d)+' acima</span>'}
 function calc(){var r=num(document.getElementById('renda').value),n=r*.5,d=r*.3,p=r*.2;
 document.getElementById('vn').textContent=brl(n);document.getElementById('vd').textContent=brl(d);document.getElementById('vp').textContent=brl(p);
-document.getElementById('sn').innerHTML=sit(num(gn.value),n);document.getElementById('sd').innerHTML=sit(num(gd.value),d);document.getElementById('sp').innerHTML=sit(num(gp.value),p,true)}
+document.getElementById('sn').innerHTML=sit(num(gn.value),n);document.getElementById('sd').innerHTML=sit(num(gd.value),d);document.getElementById('sp').innerHTML=sit(num(gp.value),p,true);
+var ex=Math.max(num(gn.value)-n,0)+Math.max(num(gd.value)-d,0);document.getElementById('ctah').textContent=ex>0?'Você passou '+brl(ex)+' do limite. A planilha mostra mês a mês onde está o vazamento:':(r>0?'Sua meta: guardar '+brl(p)+' por mês. Acompanhe isso todo mês sem fazer conta:':'Quer acompanhar isso todo mês sem fazer conta?')}
 ['renda','gn','gd','gp'].forEach(function(id){document.getElementById(id).addEventListener('input',calc)});
 document.getElementById('cta').addEventListener('click',function(){if(window.gtag)gtag('event','clique_comprar',{posicao:'calculadora_503020'})});
 </script>
