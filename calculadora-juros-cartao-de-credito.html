@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de juros do cartão de crédito grátis (rotativo x parcelar a fatura) | Norte Lab</title>
+<meta name="description" content="Calculadora de juros do cartão de crédito gratuita: veja quanto custa deixar parte da fatura no rotativo, compare com parcelar a fatura e descubra quanto a dívida cresce mês a mês. Sem cadastro.">
+<link rel="canonical" href="https://nortelabco-code.github.io/norte-planilhas/calculadora-juros-cartao-de-credito.html">
+<meta property="og:title" content="Calculadora de juros do cartão de crédito: rotativo x parcelar a fatura">
+<meta property="og:description" content="Quanto custa não pagar a fatura inteira? Faça a conta em 1 minuto, grátis.">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BYEGJBP5TS"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-BYEGJBP5TS');</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Como calcular os juros do rotativo do cartão?","acceptedAnswer":{"@type":"Answer","text":"Subtraia da fatura o valor que você vai pagar: o que sobra vai para o rotativo. Multiplique esse saldo pela taxa mensal do rotativo informada na fatura para ter os juros de um mês. Mês a mês os juros incidem sobre o saldo já com juros (juros compostos)."}},
+{"@type":"Question","name":"Existe limite para os juros do rotativo?","acceptedAnswer":{"@type":"Answer","text":"Sim. Desde 3 de janeiro de 2024 (Lei 14.690/2023 e regulamentação do Conselho Monetário Nacional), juros e encargos do rotativo e do parcelamento da fatura não podem passar de 100% do valor original da dívida."}},
+{"@type":"Question","name":"É melhor deixar no rotativo ou parcelar a fatura?","acceptedAnswer":{"@type":"Answer","text":"Depende das taxas que o seu banco oferece. Em geral o parcelamento da fatura tem taxa mensal menor que o rotativo, e o banco só pode manter a dívida no rotativo por um mês: depois precisa oferecer o parcelamento. Compare o custo efetivo total (CET) das duas opções na sua fatura."}},
+{"@type":"Question","name":"Qual taxa devo usar na calculadora?","acceptedAnswer":{"@type":"Answer","text":"Use a taxa mensal do rotativo e a do parcelamento que aparecem na sua fatura ou no app do banco, de preferência o CET, que inclui IOF e encargos."}}
+]}
+</script>
+<style>
+:root{--papel:#f7f4ee;--marinho:#1d2b45;--verde:#1f7a74;--cinza:#5b6472;--linha:#ddd6c8;--amarelo:#fff6cc}
+*{box-sizing:border-box}body{margin:0;background:var(--papel);color:var(--marinho);font:16px/1.55 Arial,Helvetica,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.marca{letter-spacing:.35em;font-size:13px;color:var(--verde);font-weight:bold}
+h1{font-size:28px;line-height:1.2;margin:8px 0 8px}h2{font-size:21px;margin:32px 0 8px}
+p.sub{color:var(--cinza);margin:0 0 20px}
+.card{background:#fff;border:1px solid var(--linha);border-radius:10px;padding:20px;margin:16px 0}
+.f{display:grid;grid-template-columns:1fr 1fr;gap:4px 14px}
+label{display:block;font-weight:bold;margin:10px 0 4px;font-size:15px}
+input{width:100%;padding:11px;font-size:17px;border:1px solid var(--linha);border-radius:8px;background:var(--amarelo);font-family:inherit;color:inherit}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.box{border-radius:8px;padding:14px;color:#fff}.box b{display:block;font-size:22px}
+.n{background:var(--marinho)}.d{background:var(--verde)}.p{background:#b5852a}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:15px}td,th{padding:7px 4px;border-bottom:1px solid var(--linha);text-align:left}td:last-child,th:last-child{text-align:right}
+.alerta{color:#b03a2e;font-weight:bold}.ok{color:var(--verde);font-weight:bold}
+.cta{background:var(--marinho);color:#fff;border-radius:10px;padding:20px;margin:28px 0}
+.cta a{display:inline-block;margin-top:10px;background:#fff;color:var(--marinho);padding:12px 18px;border-radius:8px;font-weight:bold;text-decoration:none}
+small,.nota{color:var(--cinza);font-size:13px}
+.links a{color:var(--verde)}
+@media(max-width:560px){.grid,.f{grid-template-columns:1fr}h1{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="marca">NORTE LAB</div>
+<h1>Calculadora de juros do cartão de crédito: quanto custa não pagar a fatura inteira</h1>
+<p class="sub">Coloque o valor da fatura, quanto você consegue pagar agora e as taxas que aparecem na sua fatura. Veja os juros do rotativo, quanto a dívida cresce mês a mês e o custo de parcelar a fatura. Grátis, sem cadastro, nada é enviado: o cálculo acontece no seu navegador.</p>
+
+<div class="card">
+<div class="f">
+<div><label for="fat">Valor total da fatura (R$)</label><input id="fat" type="text" inputmode="decimal" value="2000"></div>
+<div><label for="pag">Quanto vai pagar agora (R$)</label><input id="pag" type="text" inputmode="decimal" value="500"></div>
+<div><label for="tr">Juros do rotativo (% ao mês)</label><input id="tr" type="text" inputmode="decimal" value="14"></div>
+<div><label for="tp">Juros do parcelamento da fatura (% ao mês)</label><input id="tp" type="text" inputmode="decimal" value="8"></div>
+<div><label for="np">Número de parcelas</label><input id="np" type="text" inputmode="numeric" value="6"></div>
+<div><label for="mm">Meses sem pagar nada (simulação)</label><input id="mm" type="text" inputmode="numeric" value="6"></div>
+</div>
+<p class="nota">Valores já preenchidos são só um exemplo. Use as taxas da sua fatura ou do app do banco, de preferência o CET (custo efetivo total, que inclui IOF e encargos).</p>
+<div class="grid">
+<div class="box n">Vai para o rotativo<b id="vs">R$ 0,00</b><small style="color:#dfe5ef">fatura menos o que você paga</small></div>
+<div class="box p">Juros de 1 mês no rotativo<b id="vj">R$ 0,00</b><small style="color:#fbf0d9" id="va">taxa anual equivalente: —</small></div>
+<div class="box d">Parcelando a fatura<b id="vparc">R$ 0,00</b><small style="color:#dff2ef" id="vpt">por mês · total —</small></div>
+</div>
+<p id="aviso" class="alerta" hidden></p>
+</div>
+
+<div class="card">
+<b>Quanto a dívida cresce se ficar sem pagar</b>
+<table><thead><tr><th>Mês</th><th>Saldo com juros</th></tr></thead><tbody id="tab"></tbody></table>
+<p class="nota" id="teto">Pela regra em vigor desde 2024, juros e encargos do rotativo e do parcelamento da fatura não podem passar de 100% da dívida original. A tabela para nesse teto.</p>
+</div>
+
+<div class="cta">
+<b style="font-size:19px">Tem mais de uma dívida e não sabe qual pagar primeiro?</b>
+<p style="margin:6px 0 0">A Planilha de Quitação de Dívidas 2027 da Norte Lab junta cartão, empréstimo e cheque especial num lugar só, compara a ordem pelo menor saldo e pelos maiores juros e mostra o mês previsto em que cada dívida acaba, a partir do valor que você consegue pagar. Excel e Google Sheets, pagamento único de R$ 27, garantia de 7 dias.</p>
+<a id="cta" href="https://pay.kiwify.com.br/XsrJCgf?utm_source=calculadora&amp;utm_medium=organico&amp;utm_campaign=juros_cartao">Ver a planilha de quitação</a>
+</div>
+
+<h2>Como funcionam os juros do cartão</h2>
+<p>Quando você paga menos que o total da fatura, o que sobra entra no <b>crédito rotativo</b>, uma das linhas de crédito mais caras do país. Os juros são compostos: no mês seguinte, a taxa incide sobre o saldo já com os juros do mês anterior. Por isso uma dívida pequena cresce rápido.</p>
+<p>O banco só pode manter a dívida no rotativo até o vencimento da fatura seguinte. Depois, precisa oferecer o <b>parcelamento da fatura</b>, que costuma ter taxa menor. Mesmo assim, parcelar também tem juros, e a parcela vai somar com as compras novas no próximo mês.</p>
+<h2>Exemplo com números</h2>
+<p>Fatura de R$ 2.000, pagamento de R$ 500 e rotativo de 14% ao mês: R$ 1.500 vão para o rotativo e geram cerca de R$ 210 de juros em um mês. Se ficar 6 meses sem pagar, o saldo chegaria perto de R$ 3.290 a juros compostos, mas o teto legal limita juros e encargos a R$ 1.500 (100% da dívida original), ou seja, saldo máximo de R$ 3.000. Parcelando os mesmos R$ 1.500 em 6 vezes a 8% ao mês, a parcela fica perto de R$ 324 e o total pago, perto de R$ 1.947. Os números são só um exemplo: as taxas reais variam por banco e por cliente.</p>
+<h2>Perguntas frequentes</h2>
+<p><b>Como calcular os juros do rotativo do cartão?</b> Subtraia da fatura o que você vai pagar e multiplique o saldo pela taxa mensal do rotativo. Mês a mês, a taxa incide sobre o saldo com juros.<br>
+<b>Existe limite para os juros do rotativo?</b> Sim. Desde 3 de janeiro de 2024 (Lei 14.690/2023 e regulamentação do Conselho Monetário Nacional), juros e encargos do rotativo e do parcelamento da fatura não podem passar de 100% do valor original da dívida.<br>
+<b>É melhor deixar no rotativo ou parcelar a fatura?</b> Depende das taxas do seu banco. Em geral o parcelamento tem taxa menor. Compare o CET das duas opções na fatura antes de decidir.<br>
+<b>Pagar o mínimo resolve?</b> Evita a inadimplência, mas o restante vai para o rotativo e passa a ter juros. O caminho mais barato é pagar a fatura inteira sempre que possível.</p>
+<p class="nota">Ferramenta educativa e gratuita da Norte Lab. Não é recomendação financeira nem jurídica: as condições do seu contrato e do seu banco podem ser diferentes. Nenhum dado digitado sai do seu navegador. Regra do teto: Lei 14.690/2023, em vigor desde 03/01/2024.</p>
+<p class="nota links">Outras calculadoras grátis: <a href="calculadora-50-30-20.html">Regra 50 30 20</a> · <a href="calculadora-preco-de-venda.html">Preço de venda</a> · <a href="planilha-gastos-natal.html">Gastos de Natal</a> · <a href="./">Planilha de gastos mensais 2027</a></p>
+</div>
+<script>
+function num(v){v=(v||'').toString().replace(/[^\d,.-]/g,'');if(v.indexOf(',')>-1){v=v.replace(/\./g,'').replace(',','.')}var n=parseFloat(v);return isNaN(n)?0:n}
+function brl(n){return n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}
+function pct(n){return (n*100).toLocaleString('pt-BR',{maximumFractionDigits:1})+'%'}
+function $(id){return document.getElementById(id)}
+function calc(){
+ var fat=num($('fat').value),pag=num($('pag').value),ir=num($('tr').value)/100,ip=num($('tp').value)/100,n=Math.round(num($('np').value)),m=Math.min(Math.round(num($('mm').value)),36);
+ var s=Math.max(fat-pag,0),av=$('aviso');av.hidden=true;
+ $('vs').textContent=brl(s);$('vj').textContent=brl(s*ir);
+ $('va').textContent='taxa anual equivalente: '+(ir>0?pct(Math.pow(1+ir,12)-1):'—');
+ if(s>0&&n>0){var parc=ip>0?s*ip/(1-Math.pow(1+ip,-n)):s/n;$('vparc').textContent=brl(parc);$('vpt').textContent='por mês em '+n+'x · total '+brl(parc*n)}else{$('vparc').textContent=brl(0);$('vpt').textContent='por mês · total —'}
+ if(pag>fat&&fat>0){av.textContent='O pagamento é maior que a fatura: não sobra nada para o rotativo.';av.hidden=false}
+ var rows='',teto=s*2;
+ for(var k=1;k<=m;k++){var v=s*Math.pow(1+ir,k),cap=v>teto;rows+='<tr><td>'+k+'</td><td>'+brl(cap?teto:v)+(cap?' <small>(teto legal)</small>':'')+'</td></tr>';if(cap)break}
+ $('tab').innerHTML=rows||'<tr><td colspan="2">—</td></tr>';
+}
+['fat','pag','tr','tp','np','mm'].forEach(function(id){$(id).addEventListener('input',calc)});
+$('cta').addEventListener('click',function(){if(window.gtag)gtag('event','clique_comprar',{posicao:'calculadora_juros_cartao'})});
+calc();
+</script>
+</body>
+</html>
