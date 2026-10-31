@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nortelabco-code.github.io/norte-planilhas/sitemap.xml
+Sitemap: https://nortelabpro.com/sitemap.xml

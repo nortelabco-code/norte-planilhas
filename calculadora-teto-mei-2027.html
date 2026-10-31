@@ -106,7 +106,7 @@ function calc(){
  else if(proj>teto){t='No ritmo atual o ano fecharia acima do teto. Reduza o ritmo ou planeje a migração com um contador.'}
  else if(p>=0.8){t='Você já usou 80% ou mais do teto: acompanhe mês a mês.'}
  av.textContent=t;av.style.color=t&&(p>1||proj>teto)?'#b03a2e':'var(--verde)';
- $('ctah').textContent=(p>=0.8||proj>teto)?'Perto do teto? Organize o dinheiro de casa para não depender de cada venda do mês':'Separe o dinheiro do MEI do dinheiro de casa';
+ $('ctah').textContent=(p>=0.8||proj>teto)?'Perto do teto? Acompanhe o faturamento mês a mês para não passar do limite':'Controle o faturamento contra o teto o ano inteiro';
 }
 ['fat'].forEach(function(id){$(id).addEventListener('input',calc)});['ano','ab','mes'].forEach(function(id){$(id).addEventListener('change',calc)});
 $('cta').addEventListener('click',function(){if(window.gtag)gtag('event','clique_comprar',{posicao:'calculadora_teto_mei'})});
