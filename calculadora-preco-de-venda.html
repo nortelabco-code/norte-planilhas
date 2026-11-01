@@ -76,6 +76,51 @@ small,.nota{color:var(--cinza);font-size:13px}
 <p style="margin:6px 0 0">A Planilha de Precificação da Norte Lab faz essa conta para até 50 produtos de uma vez: soma os materiais do lote, transforma o seu tempo em custo, rateia os custos fixos, aplica a taxa de cada canal e mostra preço mínimo, preço sugerido, atacado e quantas unidades você precisa vender no mês. Excel e Google Sheets, pagamento único de R$ 27.</p>
 <a id="cta" href="https://pay.kiwify.com.br/0E6X8FB?utm_source=calculadora&amp;utm_medium=organico&amp;utm_campaign=preco">Ver a Planilha de Precificação</a>
 </div>
+<!-- lista-norte:inicio -->
+<style>
+#lista-norte{background:#fff;border:2px solid #1f7a74;border-radius:10px;padding:20px;margin:24px 0}
+#lista-norte b.t{display:block;font-size:19px;margin-bottom:4px}
+#lista-norte form{margin:10px 0 0}
+#lista-norte input[type=email]{width:100%;padding:11px;font-size:17px;border:1px solid #ddd6c8;border-radius:8px;background:#fff6cc;font-family:inherit;color:inherit}
+#lista-norte label.c{display:flex;gap:8px;align-items:flex-start;font-weight:normal;font-size:14px;margin:10px 0;line-height:1.4}
+#lista-norte label.c input{width:auto;margin-top:3px;flex:none}
+#lista-norte button{background:#1f7a74;color:#fff;border:0;border-radius:8px;padding:12px 18px;font:inherit;font-weight:bold;cursor:pointer}
+#lista-norte button[disabled]{opacity:.6}
+#lista-norte .r{font-size:13px;color:#5b6472;margin:10px 0 0}
+#lista-norte .msg{font-weight:bold;margin:10px 0 0}
+#lista-norte .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+</style>
+<div id="lista-norte" hidden>
+<b class="t">Quer o checklist do orçamento 2027 por e-mail?</b>
+<span>8 passos em 1 página para montar o seu orçamento em 15 minutos. Grátis.</span>
+<form novalidate>
+<input type="email" name="email" required maxlength="120" autocomplete="email" placeholder="seu@email.com" aria-label="Seu e-mail">
+<span class="hp" aria-hidden="true"><input type="text" name="site" tabindex="-1" autocomplete="off"></span>
+<label class="c"><input type="checkbox" name="consentimento" value="sim"> Quero receber o checklist e até 1 e-mail por semana da Norte Lab sobre organizar o dinheiro. Posso sair quando quiser.</label>
+<button type="submit">Receber o checklist</button>
+<p class="msg" role="status"></p>
+</form>
+<p class="r">Usamos seu e-mail só para isso. Descadastro em 1 clique em todo e-mail. <a href="politica-de-privacidade.html">Privacidade</a></p>
+</div>
+<script>
+(function(){var LISTA_URL='',ORIGEM='calculadora_preco_venda',SEG='negocio';
+var box=document.getElementById('lista-norte');
+var usou=false;document.addEventListener('input',function(e){if(usou||box.contains(e.target))return;usou=true;if(window.gtag)gtag('event','uso_calculadora',{posicao:ORIGEM})},true);
+if(!LISTA_URL)return;box.hidden=false;
+var f=box.querySelector('form'),m=box.querySelector('.msg'),b=f.querySelector('button');
+f.addEventListener('submit',function(ev){ev.preventDefault();
+ var em=f.email.value.trim();
+ if(!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(em)){m.style.color='#b03a2e';m.textContent='Confira o e-mail digitado.';return}
+ if(!f.consentimento.checked){m.style.color='#b03a2e';m.textContent='Marque a caixa para autorizar o envio.';return}
+ b.disabled=true;m.style.color='';m.textContent='Enviando…';
+ var d=new URLSearchParams({email:em,consentimento:'sim',origem:ORIGEM,segmento:SEG,site:f.site.value});
+ fetch(LISTA_URL,{method:'POST',mode:'no-cors',body:d}).then(function(){
+  m.style.color='#1f7a74';m.textContent='Pronto! Abra o e-mail que acabamos de enviar e clique em "Confirmar" para receber o checklist (se não aparecer, veja o spam ou promoções).';
+  f.email.value='';f.consentimento.checked=false;if(window.gtag)gtag('event','inscricao_lista',{posicao:ORIGEM});
+ }).catch(function(){b.disabled=false;m.style.color='#b03a2e';m.textContent='Não foi possível enviar agora. Tente de novo em instantes.'});
+});})();
+</script>
+<!-- lista-norte:fim -->
 
 <h2>Como a conta é feita</h2>
 <p>Primeiro somamos o custo de uma unidade: materiais, embalagem, o seu tempo (minutos × valor da hora) e uma parte dos custos fixos do mês. Depois incluímos a taxa do canal: <b>preço = (custo + tarifa fixa) ÷ (1 − comissão − margem)</b>. Assim a comissão é calculada sobre o preço final, e a margem que você escolheu sobra de verdade no bolso. O preço mínimo usa a mesma conta com margem zero.</p>

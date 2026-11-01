@@ -108,6 +108,51 @@ ul{margin:6px 0 0;padding-left:20px}li{margin:4px 0}
 <p>Não calcula imposto, não emite guia ou nota fiscal e não substitui orientação contábil. Excel e Google Sheets, pagamento único de R$ 47, garantia de 7 dias.</p>
 <a id="cta" href="https://pay.kiwify.com.br/FMHUppl?utm_source=calculadora&amp;utm_medium=organico&amp;utm_campaign=calendario_mei">Ver o Controle do MEI 2027</a>
 </div>
+<!-- lista-norte:inicio -->
+<style>
+#lista-norte{background:#fff;border:2px solid #1f7a74;border-radius:10px;padding:20px;margin:24px 0}
+#lista-norte b.t{display:block;font-size:19px;margin-bottom:4px}
+#lista-norte form{margin:10px 0 0}
+#lista-norte input[type=email]{width:100%;padding:11px;font-size:17px;border:1px solid #ddd6c8;border-radius:8px;background:#fff6cc;font-family:inherit;color:inherit}
+#lista-norte label.c{display:flex;gap:8px;align-items:flex-start;font-weight:normal;font-size:14px;margin:10px 0;line-height:1.4}
+#lista-norte label.c input{width:auto;margin-top:3px;flex:none}
+#lista-norte button{background:#1f7a74;color:#fff;border:0;border-radius:8px;padding:12px 18px;font:inherit;font-weight:bold;cursor:pointer}
+#lista-norte button[disabled]{opacity:.6}
+#lista-norte .r{font-size:13px;color:#5b6472;margin:10px 0 0}
+#lista-norte .msg{font-weight:bold;margin:10px 0 0}
+#lista-norte .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+</style>
+<div id="lista-norte" hidden>
+<b class="t">Quer o checklist do orçamento 2027 por e-mail?</b>
+<span>8 passos em 1 página para montar o seu orçamento em 15 minutos. Grátis.</span>
+<form novalidate>
+<input type="email" name="email" required maxlength="120" autocomplete="email" placeholder="seu@email.com" aria-label="Seu e-mail">
+<span class="hp" aria-hidden="true"><input type="text" name="site" tabindex="-1" autocomplete="off"></span>
+<label class="c"><input type="checkbox" name="consentimento" value="sim"> Quero receber o checklist e até 1 e-mail por semana da Norte Lab sobre organizar o dinheiro. Posso sair quando quiser.</label>
+<button type="submit">Receber o checklist</button>
+<p class="msg" role="status"></p>
+</form>
+<p class="r">Usamos seu e-mail só para isso. Descadastro em 1 clique em todo e-mail. <a href="politica-de-privacidade.html">Privacidade</a></p>
+</div>
+<script>
+(function(){var LISTA_URL='',ORIGEM='calendario_mei',SEG='negocio';
+var box=document.getElementById('lista-norte');
+var usou=false;document.addEventListener('input',function(e){if(usou||box.contains(e.target))return;usou=true;if(window.gtag)gtag('event','uso_calculadora',{posicao:ORIGEM})},true);
+if(!LISTA_URL)return;box.hidden=false;
+var f=box.querySelector('form'),m=box.querySelector('.msg'),b=f.querySelector('button');
+f.addEventListener('submit',function(ev){ev.preventDefault();
+ var em=f.email.value.trim();
+ if(!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(em)){m.style.color='#b03a2e';m.textContent='Confira o e-mail digitado.';return}
+ if(!f.consentimento.checked){m.style.color='#b03a2e';m.textContent='Marque a caixa para autorizar o envio.';return}
+ b.disabled=true;m.style.color='';m.textContent='Enviando…';
+ var d=new URLSearchParams({email:em,consentimento:'sim',origem:ORIGEM,segmento:SEG,site:f.site.value});
+ fetch(LISTA_URL,{method:'POST',mode:'no-cors',body:d}).then(function(){
+  m.style.color='#1f7a74';m.textContent='Pronto! Abra o e-mail que acabamos de enviar e clique em "Confirmar" para receber o checklist (se não aparecer, veja o spam ou promoções).';
+  f.email.value='';f.consentimento.checked=false;if(window.gtag)gtag('event','inscricao_lista',{posicao:ORIGEM});
+ }).catch(function(){b.disabled=false;m.style.color='#b03a2e';m.textContent='Não foi possível enviar agora. Tente de novo em instantes.'});
+});})();
+</script>
+<!-- lista-norte:fim -->
 
 <h2>Perguntas frequentes</h2>
 <h3>Quando vence o DAS do MEI em 2027?</h3>
