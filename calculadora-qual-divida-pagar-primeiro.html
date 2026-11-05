@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qual dívida pagar primeiro? Calculadora bola de neve x avalanche grátis | Norte Lab</title>
+<meta name="description" content="Calculadora grátis para saber qual dívida pagar primeiro: coloque cartão, empréstimo e cheque especial, veja a ordem pelo método avalanche (maiores juros) e bola de neve (menor saldo), o mês em que você fica livre e quanto paga de juros em cada um. Sem cadastro.">
+<link rel="canonical" href="https://nortelabpro.com/calculadora-qual-divida-pagar-primeiro.html">
+<meta property="og:title" content="Qual dívida pagar primeiro? Calculadora bola de neve x avalanche">
+<meta property="og:description" content="Compare as duas ordens de quitação com as suas dívidas: mês em que você fica livre e total de juros. Grátis.">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BYEGJBP5TS"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-BYEGJBP5TS');</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Qual dívida pagar primeiro?","acceptedAnswer":{"@type":"Answer","text":"Pague a parcela mínima de todas para não atrasar nenhuma e use o que sobrar numa só. Pelo método avalanche, o extra vai para a dívida com os maiores juros ao mês, o que costuma dar o menor total de juros. Pelo método bola de neve, vai para a de menor saldo, o que quita a primeira dívida mais cedo. A calculadora mostra os dois com os seus números."}},
+{"@type":"Question","name":"Qual a diferença entre o método bola de neve e o avalanche?","acceptedAnswer":{"@type":"Answer","text":"Os dois pagam o mínimo de todas as dívidas e concentram o dinheiro extra em uma. Na bola de neve a ordem é do menor saldo para o maior; na avalanche, dos maiores juros para os menores. Quando uma dívida acaba, a parcela dela passa a reforçar a próxima."}},
+{"@type":"Question","name":"Como saber os juros de cada dívida?","acceptedAnswer":{"@type":"Answer","text":"Procure a taxa ao mês na fatura do cartão, no contrato do empréstimo ou no extrato do cheque especial (costuma aparecer como CET ou taxa de juros mensal). Se só tiver a taxa ao ano, use a que o banco informar ao mês."}},
+{"@type":"Question","name":"E se o que eu pago por mês não cobre os juros?","acceptedAnswer":{"@type":"Answer","text":"Nesse caso a dívida cresce mesmo pagando, e nenhuma ordem resolve. A calculadora avisa quando isso acontece. O caminho costuma ser aumentar o valor mensal ou procurar o credor para renegociar condições."}}
+]}
+</script>
+<style>
+:root{--papel:#f7f4ee;--marinho:#1d2b45;--verde:#1f7a74;--cinza:#5b6472;--linha:#ddd6c8;--amarelo:#fff6cc}
+*{box-sizing:border-box}body{margin:0;background:var(--papel);color:var(--marinho);font:16px/1.55 Arial,Helvetica,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+.marca{letter-spacing:.35em;font-size:13px;color:var(--verde);font-weight:bold}
+h1{font-size:28px;line-height:1.2;margin:8px 0 8px}h2{font-size:21px;margin:32px 0 8px}
+p.sub{color:var(--cinza);margin:0 0 20px}
+.card{background:#fff;border:1px solid var(--linha);border-radius:10px;padding:20px;margin:16px 0}
+.f{display:grid;grid-template-columns:1fr 1fr;gap:4px 14px}
+label{display:block;font-weight:bold;margin:10px 0 4px;font-size:15px}
+input,select{width:100%;padding:11px;font-size:17px;border:1px solid var(--linha);border-radius:8px;background:var(--amarelo);font-family:inherit;color:inherit}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.chips button{border:1px solid var(--verde);background:#fff;color:var(--verde);border-radius:20px;padding:7px 12px;font:inherit;font-size:14px;cursor:pointer}
+.chips button.on{background:var(--verde);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.box{border-radius:8px;padding:14px;color:#fff}.box b{display:block;font-size:22px}
+.n{background:var(--marinho)}.d{background:var(--verde)}.p{background:#b5852a}
+.barra{height:14px;background:#ece6d9;border-radius:7px;overflow:hidden;margin-top:14px}.barra i{display:block;height:100%;background:var(--verde);width:0}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:15px}td,th{padding:7px 4px;border-bottom:1px solid var(--linha);text-align:left}td:last-child,th:last-child{text-align:right}
+.alerta{color:#b03a2e;font-weight:bold}.ok{color:var(--verde);font-weight:bold}
+.cta{background:var(--marinho);color:#fff;border-radius:10px;padding:20px;margin:28px 0}
+.cta a{display:inline-block;margin-top:10px;background:#fff;color:var(--marinho);padding:12px 18px;border-radius:8px;font-weight:bold;text-decoration:none}
+.cta a.sec{background:transparent;color:#fff;border:1px solid #fff;margin-left:6px}
+small,.nota{color:var(--cinza);font-size:13px}
+.links a{color:var(--verde)}
+.dv{display:grid;grid-template-columns:1.4fr 1fr .8fr 1fr;gap:6px;align-items:end;margin-top:8px}.dv input{padding:9px;font-size:16px}.dv{padding-bottom:8px;border-bottom:1px dashed var(--linha)}label.mi{margin:0;font-size:12px;color:var(--cinza)}label.mi span{display:block;margin-bottom:2px}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.cmp .card{margin:0}.cmp b.big{display:block;font-size:20px}.win{outline:3px solid var(--verde)}
+@media(max-width:560px){.dv{grid-template-columns:1fr 1fr}.cmp{grid-template-columns:1fr}}
+@media(max-width:560px){.grid,.f{grid-template-columns:1fr}h1{font-size:24px}.cta a.sec{margin-left:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="marca">NORTE LAB</div>
+<h1>Qual dívida pagar primeiro? Calculadora bola de neve x avalanche</h1>
+<p class="sub">Coloque suas dívidas (cartão, empréstimo, cheque especial, carnê), os juros ao mês, a parcela mínima e quanto você consegue pagar a mais. A calculadora mostra a ordem de quitação pelos dois métodos mais usados, o mês em que você fica livre e quanto paga de juros em cada um. Grátis, sem cadastro: o cálculo acontece no seu navegador e nada é enviado.</p>
+
+<div class="card">
+<b>Suas dívidas</b> <small>(até 6; deixe em branco as que não usar)</small>
+<div id="lista"></div>
+<div class="f">
+<div><label for="ex">Quanto você consegue pagar A MAIS por mês (R$)</label><input id="ex" type="text" inputmode="decimal" value="300"></div>
+<div><label>Total por mês (mínimos + extra)</label><input id="tot" type="text" readonly value=""></div>
+</div>
+<p class="nota">Os valores já preenchidos são só um exemplo. A taxa ao mês aparece na fatura, no contrato ou no extrato (CET ou juros mensais). O cálculo mantém o mesmo total por mês do começo ao fim: quando uma dívida acaba, a parcela dela reforça a próxima.</p>
+</div>
+
+<div class="cmp">
+<div class="card" id="cA"><small>MÉTODO AVALANCHE · maiores juros primeiro</small><b class="big" id="aT">—</b><span id="aJ"></span><p class="nota" id="aO"></p></div>
+<div class="card" id="cB"><small>MÉTODO BOLA DE NEVE · menor saldo primeiro</small><b class="big" id="bT">—</b><span id="bJ"></span><p class="nota" id="bO"></p></div>
+</div>
+<p id="msg" class="ok"></p>
+
+<div class="card">
+<b>Quando cada dívida acaba</b>
+<table><thead><tr><th>Dívida</th><th>Avalanche</th><th>Bola de neve</th></tr></thead><tbody id="tab"></tbody></table>
+<p class="nota">Simulação mês a mês: juros sobre o saldo, parcela mínima em todas e o resto na dívida da vez. Não inclui multas, IOF, encargos de atraso nem renegociação. Os números dependem do que você digita.</p>
+</div>
+
+<div class="cta">
+<b style="font-size:19px" id="ctah">Saber a ordem é o primeiro passo. O difícil é seguir o plano todo mês.</b>
+<p style="margin:6px 0 0">A Planilha de Quitação de Dívidas 2027 da Norte Lab junta cartão, empréstimo e cheque especial num lugar só, compara a ordem pelo menor saldo e pelos maiores juros e mostra o mês previsto em que cada dívida acaba, a partir do valor que você consegue pagar. Você atualiza os pagamentos e vê o saldo cair. Excel e Google Sheets, pagamento único de R$ 27, sem mensalidade, garantia de 7 dias.</p>
+<a id="cta" href="https://pay.kiwify.com.br/XsrJCgf?utm_source=calculadora&amp;utm_medium=organico&amp;utm_campaign=qual_divida">Ver a planilha de quitação</a>
+<a id="cta2" class="sec" href="https://pay.kiwify.com.br/ZpsuiQa?utm_source=calculadora&amp;utm_medium=organico&amp;utm_campaign=qual_divida_orcamento">Organizar o orçamento do mês</a>
+</div>
+<!-- lista-norte:inicio -->
+<style>
+#lista-norte{background:#fff;border:2px solid #1f7a74;border-radius:10px;padding:20px;margin:24px 0}
+#lista-norte b.t{display:block;font-size:19px;margin-bottom:4px}
+#lista-norte form{margin:10px 0 0}
+#lista-norte input[type=email]{width:100%;padding:11px;font-size:17px;border:1px solid #ddd6c8;border-radius:8px;background:#fff6cc;font-family:inherit;color:inherit}
+#lista-norte label.c{display:flex;gap:8px;align-items:flex-start;font-weight:normal;font-size:14px;margin:10px 0;line-height:1.4}
+#lista-norte label.c input{width:auto;margin-top:3px;flex:none}
+#lista-norte button{background:#1f7a74;color:#fff;border:0;border-radius:8px;padding:12px 18px;font:inherit;font-weight:bold;cursor:pointer}
+#lista-norte button[disabled]{opacity:.6}
+#lista-norte .r{font-size:13px;color:#5b6472;margin:10px 0 0}
+#lista-norte .msg{font-weight:bold;margin:10px 0 0}
+#lista-norte .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+</style>
+<div id="lista-norte" hidden>
+<b class="t">Quer o checklist do orçamento 2027 por e-mail?</b>
+<span>8 passos em 1 página para montar o seu orçamento em 15 minutos. Grátis.</span>
+<form novalidate>
+<input type="email" name="email" required maxlength="120" autocomplete="email" placeholder="seu@email.com" aria-label="Seu e-mail">
+<span class="hp" aria-hidden="true"><input type="text" name="site" tabindex="-1" autocomplete="off"></span>
+<label class="c"><input type="checkbox" name="consentimento" value="sim"> Quero receber o checklist e até 1 e-mail por semana da Norte Lab sobre organizar o dinheiro. Posso sair quando quiser.</label>
+<button type="submit">Receber o checklist</button>
+<p class="msg" role="status"></p>
+</form>
+<p class="r">Usamos seu e-mail só para isso. Descadastro em 1 clique em todo e-mail. <a href="politica-de-privacidade.html">Privacidade</a></p>
+</div>
+<script>
+(function(){var LISTA_URL='https://script.google.com/macros/s/AKfycbySCZu4X3r2bw_c2_WG3PyGwcwquMOd4nhfmPM0Afpy65mX8UcJibscmeYg0j0Ht9L0PQ/exec',ORIGEM='calculadora_dividas',SEG='pessoal';
+var box=document.getElementById('lista-norte');
+var usou=false;document.addEventListener('input',function(e){if(usou||box.contains(e.target))return;usou=true;if(window.gtag)gtag('event','uso_calculadora',{posicao:ORIGEM})},true);
+if(!LISTA_URL)return;box.hidden=false;
+var f=box.querySelector('form'),m=box.querySelector('.msg'),b=f.querySelector('button');
+f.addEventListener('submit',function(ev){ev.preventDefault();
+ var em=f.email.value.trim();
+ if(!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(em)){m.style.color='#b03a2e';m.textContent='Confira o e-mail digitado.';return}
+ if(!f.consentimento.checked){m.style.color='#b03a2e';m.textContent='Marque a caixa para autorizar o envio.';return}
+ b.disabled=true;m.style.color='';m.textContent='Enviando…';
+ var d=new URLSearchParams({email:em,consentimento:'sim',origem:ORIGEM,segmento:SEG,site:f.site.value});
+ fetch(LISTA_URL,{method:'POST',mode:'no-cors',body:d}).then(function(){
+  m.style.color='#1f7a74';m.textContent='Pronto! Abra o e-mail que acabamos de enviar e clique em "Confirmar" para receber o checklist (se não aparecer, veja o spam ou promoções).';
+  f.email.value='';f.consentimento.checked=false;if(window.gtag)gtag('event','inscricao_lista',{posicao:ORIGEM});
+ }).catch(function(){b.disabled=false;m.style.color='#b03a2e';m.textContent='Não foi possível enviar agora. Tente de novo em instantes.'});
+});})();
+</script>
+<!-- lista-norte:fim -->
+
+<h2>Qual dívida pagar primeiro: a regra em 3 passos</h2>
+<p>1. <b>Pague o mínimo de todas</b>, para nenhuma atrasar e gerar multa. 2. <b>Escolha uma dívida</b> para receber todo o dinheiro que sobrar. 3. <b>Quando ela acabar</b>, some a parcela dela ao extra e passe para a próxima. O que muda entre os métodos é só o critério do passo 2.</p>
+<h2>Método avalanche: maiores juros primeiro</h2>
+<p>O extra vai para a dívida com a maior taxa ao mês, normalmente o rotativo do cartão ou o cheque especial. Como você ataca primeiro o dinheiro mais caro, o total de juros costuma ser o menor possível. A desvantagem: se a dívida mais cara também for a maior, a primeira vitória demora.</p>
+<h2>Método bola de neve: menor saldo primeiro</h2>
+<p>O extra vai para a dívida de menor saldo, qualquer que seja a taxa. A primeira dívida some rápido, e cada parcela liberada engorda a seguinte, como uma bola de neve. Costuma custar um pouco mais de juros, mas muita gente prefere pela sensação de progresso.</p>
+<h2>Exemplo com números</h2>
+<p>Cartão de R$ 2.500 a 12% ao mês (mínimo R$ 250), empréstimo pessoal de R$ 6.000 a 4% (parcela R$ 300) e carnê de loja de R$ 800 a 6% (parcela R$ 80), com R$ 300 a mais por mês. Os resultados aparecem na calculadora acima com esses números de exemplo; troque pelos seus.</p>
+<h2>Perguntas frequentes</h2>
+<p><b>Qual método é melhor?</b> Se o objetivo é pagar menos juros, a avalanche costuma ganhar. Se você precisa ver resultado rápido para não desistir, a bola de neve ajuda. A calculadora mostra a diferença em reais e em meses com as suas dívidas; a decisão é sua.<br>
+<b>Vale renegociar antes?</b> Renegociar pode baixar a taxa e mudar a ordem. Se conseguir uma taxa nova, atualize os juros aqui e compare de novo.<br>
+<b>E se o dinheiro não cobre os juros?</b> A dívida cresce mesmo pagando. A calculadora avisa quando isso acontece.<br>
+<b>Preciso informar meus dados?</b> Não. Nada do que você digita sai do navegador.</p>
+<p class="nota">Ferramenta educativa e gratuita da Norte Lab. Não é orientação financeira, jurídica ou de crédito personalizada e não substitui a negociação com o credor: os números dependem do que você digita e não incluem multas, IOF ou encargos de atraso.</p>
+<p class="nota links">Outras calculadoras grátis: <a href="calculadora-juros-cartao-de-credito.html">Juros do cartão</a> · <a href="calculadora-50-30-20.html">Regra 50 30 20</a> · <a href="calculadora-reserva-de-emergencia.html">Reserva de emergência</a> · <a href="calculadora-teto-mei-2027.html">Teto do MEI 2027</a> · <a href="calculadora-preco-de-venda.html">Preço de venda</a> · <a href="planilha-gastos-natal.html">Gastos de Natal</a> · <a href="./">Planilha de gastos mensais 2027</a></p>
+</div>
+<script>
+function num(v){v=(v||'').toString().replace(/[^\d,.-]/g,'');if(v.indexOf(',')>-1){v=v.replace(/\./g,'').replace(',','.')}var n=parseFloat(v);return isNaN(n)?0:n}
+function brl(n){return n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}
+function $(id){return document.getElementById(id)}
+var MES=['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+function quando(k){var d=new Date();d.setDate(1);d.setMonth(d.getMonth()+k);return MES[d.getMonth()]+'/'+d.getFullYear()}
+function tempo(k){var a=Math.floor(k/12),m=k%12;return (a?a+(a>1?' anos':' ano'):'')+(a&&m?' e ':'')+(m?m+(m>1?' meses':' mês'):'')}
+var EX=[['Cartão de crédito','2500','12','250'],['Empréstimo pessoal','6000','4','300'],['Carnê da loja','800','6','80'],['','','',''],['','','',''],['','','','']];
+var L=$('lista');
+EX.forEach(function(e,i){var d=document.createElement('div');d.className='dv';
+ d.innerHTML='<label class="mi"><span>Dívida '+(i+1)+'</span><input id="n'+i+'" type="text" value="'+e[0]+'" placeholder="Nome"></label><label class="mi"><span>Saldo hoje (R$)</span><input id="s'+i+'" type="text" inputmode="decimal" value="'+e[1]+'"></label><label class="mi"><span>Juros % ao mês</span><input id="j'+i+'" type="text" inputmode="decimal" value="'+e[2]+'"></label><label class="mi"><span>Parcela mínima (R$)</span><input id="p'+i+'" type="text" inputmode="decimal" value="'+e[3]+'"></label>';
+ L.appendChild(d)});
+function ler(){var r=[];for(var i=0;i<6;i++){var s=num($('s'+i).value);if(s>0)r.push({n:$('n'+i).value.trim()||('Dívida '+(i+1)),s:s,j:Math.max(num($('j'+i).value),0)/100,p:Math.max(num($('p'+i).value),0)})}return r}
+function sim(ds,modo,total){
+ var d=ds.map(function(x){return {n:x.n,s:x.s,j:x.j,p:x.p,fim:0}});
+ var ord=d.slice().sort(modo==='a'?function(x,y){return y.j-x.j||x.s-y.s}:function(x,y){return x.s-y.s||y.j-x.j});
+ var k=0,juros=0;
+ while(k<600&&d.some(function(x){return x.s>0.005})){k++;
+  var cx=total;
+  d.forEach(function(x){if(x.s>0.005){var i=x.s*x.j;x.s+=i;juros+=i}});
+  d.forEach(function(x){if(x.s>0.005){var pg=Math.min(x.p,x.s,cx);x.s-=pg;cx-=pg}});
+  for(var t=0;t<ord.length&&cx>0.005;t++){var x=ord[t];if(x.s>0.005){var pg=Math.min(x.s,cx);x.s-=pg;cx-=pg}}
+  d.forEach(function(x){if(x.s<=0.005&&!x.fim){x.s=0;x.fim=k}});
+ }
+ return {k:k,juros:juros,ok:!d.some(function(x){return x.s>0.005}),ord:ord.map(function(x){return x.n}),fim:d.map(function(x){return x.fim})};
+}
+function calc(){
+ var ds=ler(),ex=Math.max(num($('ex').value),0),min=ds.reduce(function(a,x){return a+x.p},0),total=min+ex;
+ $('tot').value=brl(total);
+ var msg=$('msg');
+ if(!ds.length){$('aT').textContent='—';$('bT').textContent='—';$('aJ').textContent='';$('bJ').textContent='';$('aO').textContent='';$('bO').textContent='';$('tab').innerHTML='';msg.className='alerta';msg.textContent='Coloque o saldo de pelo menos uma dívida.';return}
+ var juros1=ds.reduce(function(a,x){return a+x.s*x.j},0);
+ var A=sim(ds,'a',total),B=sim(ds,'b',total);
+ function pinta(R,t,jj,o){if(R.ok){$(t).textContent='Livre em '+tempo(R.k)+' ('+quando(R.k)+')';$(jj).textContent='Juros pagos: '+brl(R.juros)}else{$(t).textContent='Não quita em 50 anos';$(jj).textContent=''}$(o).textContent='Ordem: '+R.ord.join(' → ')}
+ pinta(A,'aT','aJ','aO');pinta(B,'bT','bJ','bO');
+ $('cA').classList.remove('win');$('cB').classList.remove('win');
+ var rows='';ds.forEach(function(x,i){rows+='<tr><td>'+x.n.replace(/[<>&]/g,'')+'</td><td>'+(A.fim[i]?quando(A.fim[i]):'—')+'</td><td>'+(B.fim[i]?quando(B.fim[i]):'—')+'</td></tr>'});$('tab').innerHTML=rows;
+ if(total<=juros1){msg.className='alerta';msg.textContent='Atenção: '+brl(total)+' por mês não cobre os juros do primeiro mês ('+brl(juros1)+'). Assim a dívida cresce mesmo pagando. Aumente o valor mensal ou procure o credor para renegociar a taxa.';cta(0);return}
+ if(!A.ok&&!B.ok){msg.className='alerta';msg.textContent='Com esse valor por mês as dívidas não acabam em 50 anos. Vale aumentar o valor mensal ou renegociar as taxas.';cta(0);return}
+ var dj=B.juros-A.juros,dk=B.k-A.k;
+ if(Math.abs(dj)<1&&dk===0){msg.className='ok';msg.textContent='Com as suas dívidas os dois métodos dão o mesmo resultado: escolha o que for mais fácil de seguir.'}
+ else if(A.ok&&B.ok){if(dj>=0)$('cA').classList.add('win');msg.className='ok';msg.textContent='A avalanche economiza '+brl(Math.max(dj,0))+' de juros'+(dk>0?' e termina '+dk+(dk>1?' meses':' mês')+' antes':'')+'. A bola de neve quita a primeira dívida em '+quando(Math.min.apply(null,B.fim.filter(Boolean)))+', contra '+quando(Math.min.apply(null,A.fim.filter(Boolean)))+' na avalanche.'}
+ cta(A.juros);
+}
+function cta(j){$('ctah').textContent=j>0?('Com o seu plano, são '+brl(j)+' de juros até o fim. Seguir a ordem todo mês é o que faz esse número cair.'):'Saber a ordem é o primeiro passo. O difícil é seguir o plano todo mês.'}
+document.addEventListener('input',function(e){if(e.target.closest&&e.target.closest('#lista-norte'))return;calc()});
+$('cta').addEventListener('click',function(){if(window.gtag)gtag('event','clique_comprar',{posicao:'calculadora_dividas'})});
+$('cta2').addEventListener('click',function(){if(window.gtag)gtag('event','clique_comprar',{posicao:'calculadora_dividas_orcamento'})});
+calc();
+</script>
+</body>
+</html>

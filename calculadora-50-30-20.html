@@ -34,14 +34,16 @@ td input{font-size:16px;padding:8px}.ok{color:var(--verde);font-weight:bold}.ale
 .cta{background:var(--marinho);color:#fff;border-radius:10px;padding:20px;margin:28px 0}
 .cta a{display:inline-block;margin-top:10px;background:#fff;color:var(--marinho);padding:12px 18px;border-radius:8px;font-weight:bold;text-decoration:none}
 small,.nota{color:var(--cinza);font-size:13px}
-@media(max-width:560px){.grid{grid-template-columns:1fr}h1{font-size:24px}}
+.oferta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:#fff;border:2px solid var(--verde);border-radius:10px;padding:12px 14px;margin:0 0 16px}.oferta span{font-size:15px}.oferta a,.pos a{display:inline-block;background:var(--verde);color:#fff;padding:10px 16px;border-radius:8px;font-weight:bold;text-decoration:none;white-space:nowrap}.pos{margin:0 0 14px;padding-bottom:12px;border-bottom:1px dashed var(--linha);display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}@media(max-width:560px){.grid{grid-template-columns:1fr}h1{font-size:24px}}
+
 </style>
 </head>
 <body>
 <div class="wrap">
 <div class="marca">NORTE LAB</div>
 <h1>Regra 50 30 20: calculadora para dividir o salário</h1>
-<p class="sub">Digite sua renda líquida (o que cai na conta) e veja a divisão sugerida pela regra 50/30/20. Grátis, sem cadastro, nada é enviado: o cálculo acontece no seu navegador.</p>
+<p class="sub">Digite sua renda líquida (o que cai na conta) e veja a divisão sugerida pela regra 50/30/20. Grátis, sem cadastro, nada é enviado: o cálculo acontece no seu navegador.</p><div class="oferta"><span><b>Planilha de Gastos Mensais 2027</b> · R$ 27, pagamento único · acesso na hora · garantia de 7 dias</span><a class="js-cta" data-pos="calculadora_503020_topo" href="https://pay.kiwify.com.br/ZpsuiQa?utm_source=calculadora&amp;utm_medium=organico&amp;utm_campaign=503020&amp;utm_content=topo">Quero a planilha</a></div>
+
 
 <div class="card">
 <label for="renda">Renda líquida mensal (R$)</label>
@@ -54,7 +56,8 @@ small,.nota{color:var(--cinza);font-size:13px}
 </div>
 
 <div class="card">
-<b>Compare com o que você gasta hoje (opcional)</b>
+<div class="pos"><span><b>Quer essa divisão feita sozinha, todo mês, com o que você gastou de verdade?</b></span><a class="js-cta" data-pos="calculadora_503020_resultado" href="https://pay.kiwify.com.br/ZpsuiQa?utm_source=calculadora&amp;utm_medium=organico&amp;utm_campaign=503020&amp;utm_content=resultado">Ver a planilha · R$ 27</a></div><b>Compare com o que você gasta hoje (opcional)</b>
+
 <table>
 <tr><th>Grupo</th><th>Você gasta (R$)</th><th>Situação</th></tr>
 <tr><td>Necessidades</td><td><input id="gn" type="text" inputmode="decimal"></td><td id="sn">—</td></tr>
@@ -67,7 +70,8 @@ small,.nota{color:var(--cinza);font-size:13px}
 <div class="cta">
 <b style="font-size:19px" id="ctah">Quer acompanhar isso todo mês sem fazer conta?</b>
 <p style="margin:6px 0 0">A Planilha de Gastos Mensais 2027 da Norte Lab soma seus lançamentos por categoria, mostra orçado x realizado, o que estourou no mês, resumo do ano, metas e dívidas. Excel e Google Sheets, pagamento único de R$ 27, garantia de 7 dias.</p>
-<a id="cta" href="https://pay.kiwify.com.br/ZpsuiQa?utm_source=calculadora&amp;utm_medium=organico&amp;utm_campaign=503020">Ver a planilha</a>
+<a id="cta" href="https://pay.kiwify.com.br/ZpsuiQa?utm_source=calculadora&amp;utm_medium=organico&amp;utm_campaign=503020">Quero a planilha · R$ 27</a><br><small style="color:#dfe5ef">Pagamento único · acesso na hora · garantia de 7 dias</small>
+
 <a href="https://nortelabpro.com/?utm_source=calculadora&amp;utm_medium=organico&amp;utm_campaign=503020" style="background:transparent;color:#fff;border:1px solid #fff;margin-left:6px">O que vem nela</a>
 </div>
 <!-- lista-norte:inicio -->
@@ -140,7 +144,8 @@ document.getElementById('vn').textContent=brl(n);document.getElementById('vd').t
 document.getElementById('sn').innerHTML=sit(num(gn.value),n);document.getElementById('sd').innerHTML=sit(num(gd.value),d);document.getElementById('sp').innerHTML=sit(num(gp.value),p,true);
 var ex=Math.max(num(gn.value)-n,0)+Math.max(num(gd.value)-d,0);document.getElementById('ctah').textContent=ex>0?'Você passou '+brl(ex)+' do limite. A planilha mostra mês a mês onde está o vazamento:':(r>0?'Sua meta: guardar '+brl(p)+' por mês. Acompanhe isso todo mês sem fazer conta:':'Quer acompanhar isso todo mês sem fazer conta?')}
 ['renda','gn','gd','gp'].forEach(function(id){document.getElementById(id).addEventListener('input',calc)});
-document.getElementById('cta').addEventListener('click',function(){if(window.gtag)gtag('event','clique_comprar',{posicao:'calculadora_503020'})});
+document.getElementById('cta').addEventListener('click',function(){if(window.gtag)gtag('event','clique_comprar',{posicao:'calculadora_503020'})});document.querySelectorAll('.js-cta').forEach(function(a){a.addEventListener('click',function(){if(window.gtag)gtag('event','clique_comprar',{posicao:a.getAttribute('data-pos')})})});
+
 </script>
 </body>
 </html>

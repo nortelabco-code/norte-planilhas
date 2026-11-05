@@ -38,14 +38,16 @@ table{width:100%;border-collapse:collapse;margin-top:12px;font-size:15px}td,th{p
 .cta a{display:inline-block;margin-top:10px;background:#fff;color:var(--marinho);padding:12px 18px;border-radius:8px;font-weight:bold;text-decoration:none}
 small,.nota{color:var(--cinza);font-size:13px}
 .links a{color:var(--verde)}
-@media(max-width:560px){.grid,.f{grid-template-columns:1fr}h1{font-size:24px}}
+.oferta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:#fff;border:2px solid var(--verde);border-radius:10px;padding:12px 14px;margin:0 0 16px}.oferta span{font-size:15px}.oferta a,.pos a{display:inline-block;background:var(--verde);color:#fff;padding:10px 16px;border-radius:8px;font-weight:bold;text-decoration:none;white-space:nowrap}.pos{margin:0 0 14px;padding-bottom:12px;border-bottom:1px dashed var(--linha);display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}@media(max-width:560px){.grid,.f{grid-template-columns:1fr}h1{font-size:24px}}
+
 </style>
 </head>
 <body>
 <div class="wrap">
 <div class="marca">NORTE LAB</div>
 <h1>Calculadora do teto do MEI 2027: quanto do limite você já usou</h1>
-<p class="sub">Com a lei nova (Lei Complementar 238/2026), o limite do MEI sobe de R$ 81 mil para R$ 110 mil em 2027 e R$ 140 mil em 2028. Coloque o ano, quando abriu e quanto já faturou: veja o seu teto, quanto falta e quanto ainda pode faturar por mês. Grátis, sem cadastro, nada é enviado: o cálculo acontece no seu navegador.</p>
+<p class="sub">Com a lei nova (Lei Complementar 238/2026), o limite do MEI sobe de R$ 81 mil para R$ 110 mil em 2027 e R$ 140 mil em 2028. Coloque o ano, quando abriu e quanto já faturou: veja o seu teto, quanto falta e quanto ainda pode faturar por mês. Grátis, sem cadastro, nada é enviado: o cálculo acontece no seu navegador.</p><div class="oferta"><span><b>Controle do MEI 2027 · Essencial</b> · R$ 47, pagamento único · acesso na hora · garantia de 7 dias</span><a class="js-cta" data-pos="calculadora_teto_mei_topo" href="https://pay.kiwify.com.br/FMHUppl?utm_source=calculadora&amp;utm_medium=organico&amp;utm_campaign=teto_mei&amp;utm_content=topo">Ver o Controle do MEI</a></div>
+
 
 <div class="card">
 <div class="f">
@@ -60,13 +62,15 @@ small,.nota{color:var(--cinza);font-size:13px}
 <div class="box p">Já usado<b id="vu">0%</b><small style="color:#fbf0d9" id="vf">falta —</small></div>
 <div class="box d">Pode faturar por mês até dezembro<b id="vm">R$ 0,00</b><small style="color:#dff2ef" id="vp">no ritmo atual, o ano fecha em —</small></div>
 </div>
-<p id="aviso" class="alerta" style="margin-top:14px"></p>
+<p id="aviso" class="alerta" style="margin-top:14px"></p><div class="pos" style="margin:14px 0 0;padding:12px 0 0;border-bottom:0;border-top:1px dashed var(--linha)"><span><b>Acompanhe o faturamento contra o teto mês a mês, com alerta antes de estourar.</b></span><a class="js-cta" data-pos="calculadora_teto_mei_resultado" href="https://pay.kiwify.com.br/FMHUppl?utm_source=calculadora&amp;utm_medium=organico&amp;utm_campaign=teto_mei&amp;utm_content=resultado">Ver a planilha · R$ 47</a></div>
+
 </div>
 
 <div class="cta">
 <b style="font-size:19px" id="ctah">Controle do MEI 2027 · Essencial</b>
 <p style="margin:6px 0 0">Planilha para o MEI acompanhar o faturamento do ano contra o teto de R$ 110.000 (ou o proporcional, para quem abriu no meio do ano), com alertas em 80%, 100% e 120% do limite, despesas do negócio, relatório mensal de receitas e o calendário do DAS e da DASN-SIMEI de 2027. Não calcula imposto, não emite guia ou nota fiscal e não substitui orientação contábil. Excel e Google Sheets, pagamento único de R$ 47, garantia de 7 dias.</p>
-<a id="cta" href="https://pay.kiwify.com.br/FMHUppl?utm_source=calculadora&amp;utm_medium=organico&amp;utm_campaign=teto_mei">Ver o Controle do MEI 2027</a>
+<a id="cta" href="https://pay.kiwify.com.br/FMHUppl?utm_source=calculadora&amp;utm_medium=organico&amp;utm_campaign=teto_mei">Quero o Controle do MEI · R$ 47</a>
+
 </div>
 <!-- lista-norte:inicio -->
 <style>
@@ -154,7 +158,8 @@ function calc(){
  $('ctah').textContent=(p>=0.8||proj>teto)?'Perto do teto? Acompanhe o faturamento mês a mês para não passar do limite':'Controle o faturamento contra o teto o ano inteiro';
 }
 ['fat'].forEach(function(id){$(id).addEventListener('input',calc)});['ano','ab','mes'].forEach(function(id){$(id).addEventListener('change',calc)});
-$('cta').addEventListener('click',function(){if(window.gtag)gtag('event','clique_comprar',{posicao:'calculadora_teto_mei'})});
+$('cta').addEventListener('click',function(){if(window.gtag)gtag('event','clique_comprar',{posicao:'calculadora_teto_mei'})});document.querySelectorAll('.js-cta').forEach(function(a){a.addEventListener('click',function(){if(window.gtag)gtag('event','clique_comprar',{posicao:a.getAttribute('data-pos')})})});
+
 calc();
 </script>
 </body>
