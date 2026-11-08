@@ -78,7 +78,7 @@ a{color:inherit}
 <footer><span>© 2026 Norte Lab</span><a href="/politica-de-privacidade.html">Política de privacidade</a></footer>
 </div>
 <script>
-document.querySelectorAll('a.btn').forEach(function(a){a.addEventListener('click',function(){try{gtag("event","clique_comprar",{posicao:"kit_mei_"+a.dataset.pos,transport_type:"beacon"});}catch(e){}});});
+(function(){var q=new URLSearchParams(location.search),r=document.referrer||'',s,m,c=q.get('utm_campaign')||'kit_mei';if(q.get('utm_source')){s=q.get('utm_source');m=q.get('utm_medium')||'referral';}else if(q.get('gclid')||q.get('gbraid')||q.get('wbraid')){s='google';m='cpc';}else if(/google\.|bing\.|duckduckgo\.|yahoo\./i.test(r)){s='organico';m='busca';}else if(/pinterest\./i.test(r)){s='pinterest';m='social';}else if(r&&r.indexOf(location.hostname)<0){s='referral';m='site';}else{s='direto';m='nenhum';}document.querySelectorAll('a.btn').forEach(function(a){a.href='https://pay.kiwify.com.br/nLVOQTS?utm_source='+encodeURIComponent(s)+'&utm_medium='+encodeURIComponent(m)+'&utm_campaign='+encodeURIComponent(c)+'&utm_content=kit_mei_'+a.dataset.pos;});})();document.querySelectorAll('a.btn').forEach(function(a){a.addEventListener('click',function(){try{gtag("event","clique_comprar",{posicao:"kit_mei_"+a.dataset.pos,transport_type:"beacon"});}catch(e){}});});
 </script>
 </body>
 </html>
